@@ -14,7 +14,7 @@ class AuthController extends Controller
             'password' => 'required|confirmed'
         ]);
 
-        $user = $user->create($fields);
+        $user = User::create($fields);  //2
 
         $token = $user->createToken($request->name);
         
