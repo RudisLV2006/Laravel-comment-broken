@@ -22,7 +22,9 @@ class PostController extends Controller implements HasMiddleware
      */
     public function index()
     {
+        \Log::debug(Post::with('comments')->get());
         return Post::all(); //4
+
     }
 
     /**
