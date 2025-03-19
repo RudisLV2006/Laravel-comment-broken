@@ -32,9 +32,8 @@ class PostController extends Controller implements HasMiddleware
     {
         $fields = $request->validate([
             'title' => 'required|max:255',
-            'body' => 'required',
-            'password' => 'required'
-        ]);
+            'body' => 'required'
+        ]);  //5
 
         $post = Post::create($fields);
 
