@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -36,7 +37,7 @@ class AuthController extends Controller
             return ['message' => 'The provided creadentials are incorrect.'];
         }
 
-        $user->createToken($user->name);
+        $token = $user->createToken($user->name); //3
         
         return [
             'user' => $user,
